@@ -1,0 +1,111 @@
+/* Overide blueprint layout */
+.span-4 {
+}
+.span-16 {
+}
+.span-24 {
+    border-bottom:1px #EEE solid;
+}
+.container {
+    background-color:white;
+    margin-top:20px;
+    padding:10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 8px;
+}
+.small {
+    line-height:1em;
+    margin-bottom:0.5em;
+}
+/* Custom classes and ids style */
+body {
+    font-size:90%;
+    background:url("/images/bg.png") repeat;
+}
+a, a:link, a:visited {
+    text-decoration:none;
+}
+a:hover, a:active {
+    text-decoration:underline;
+}
+h1 {
+    font-size:1.8em;
+}
+h2 {
+    font-size:1.4em;
+}
+#scriptlet {
+    background-color:#666;
+    padding:2px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+#scriptlet a{
+    color: white;
+    text-decoration:none;
+}
+.header {
+    min-height:40px;
+}
+.header h1{
+    padding:10px 0px 0px 10px;
+}
+.nav {
+    height:40px;
+}
+.nav ul {
+    list-style:none;
+    padding-top:10px;
+    text-align:right;
+}
+.nav ul li {
+    display:inline;
+    padding:2px;
+}
+.nav ul li:last-child {
+    border-right: none;
+}
+.search {
+}
+.search form {
+    background:url("/images/google.png") no-repeat center left;
+    padding-left:70px;
+    height:40px;
+}
+.catagories, .admin_section {
+    margin-top:10px;
+}
+.catagory {
+    
+}
+.catagory h3 {
+    line-height:1.6em;
+    text-align:center;
+    background-color:#EEE;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color:#333;
+    font-size:0.9em;
+    font-weight:bold;
+    font-variant:small-caps;
+    font-family: "Myriod Pro", "Lucida Grand", Arial, Verdana, "Helvatica Neue", "Hei", STHeiti, "Microsoft Yahei" sans-serif;
+}
+.catagory ul {
+    list-style:none;
+    padding-left:10px;
+}
+.container .span-24:last-child {
+    border:none;
+}
+.footer {
+    padding-top:10px;
+    text-align:right;
+}
+

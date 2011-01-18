@@ -1,0 +1,7 @@
+<% title(t("bookmarks.add")) %>
+<% stylesheet("popup") if @popup %>
+<h1><%= t("bookmarks.new") -%></h1>
+
+<%= render :partial => 'form' %>
+
+<%= link_to t("top.back"), admin_path %>

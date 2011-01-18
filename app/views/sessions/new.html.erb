@@ -1,0 +1,16 @@
+<% stylesheet("popup") %>
+<div class="span-6 prepend-3">
+  <h1><%= t("top.login") -%></h1>
+  <% form_tag session_path do -%>
+  <div><%= label_tag 'login', t("top.login_name") %><br />
+  <%= text_field_tag 'login', @login, :class => "text" %></div>
+
+  <div><%= label_tag 'password', t("top.password") %><br/>
+  <%= password_field_tag 'password', nil, :class => "text" %></div>
+
+  <div><%= label_tag 'remember_me', t("top.remember") %>
+  <%= check_box_tag 'remember_me', '1', @remember_me, :checked => "checked"%></div>
+
+  <div><%= submit_tag t("top.login") %> | <%= link_to t("top.signup"), signup_path %></div>
+  <% end -%>
+</div>

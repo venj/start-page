@@ -1,0 +1,21 @@
+<% stylesheet("popup") %>
+<div class="span-6 prepend-3">
+  <h1><%= t("top.signup") -%></h1>
+  <% @user.password = @user.password_confirmation = nil %>
+  <%= error_messages_for :user %>
+  <% form_for :user, :url => users_path do |f| -%>
+  <div><%= f.label :login, t("top.login_name") %><br/>
+  <%= f.text_field :login, :class => "text" %></div>
+
+  <div><%= f.label :email, t("top.email") %><br/>
+  <%= f.text_field :email, :class => "text" %></div>
+
+  <div><%= f.label :password, t("top.password") %><br/>
+  <%= f.password_field :password, :class => "text" %></div>
+
+  <div><%= f.label :password_confirmation, t("top.password_confirmation") %><br/>
+  <%= f.password_field :password_confirmation, :class => "text" %></div>
+
+  <div><%= submit_tag t("top.signup") %> | <%= link_to t("top.login"), login_path %></div>
+  <% end -%>
+</div>

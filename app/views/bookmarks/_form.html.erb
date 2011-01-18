@@ -1,0 +1,24 @@
+<% form_for(@bookmark) do |f| %>
+  <div>
+    <%= f.label :title, t("bookmarks.title") %><br />
+    <%= f.text_field :title, :value => @title %>
+    <%= error_message_on "bookmark", "title" %>
+  </div>
+  <div>
+    <%= f.label :link, t("bookmarks.link") %><br />
+    <%= f.text_field :link, :value => @link %>
+    <%= error_message_on "bookmark", "link" %>
+  </div>
+  <div>
+    <%= f.label :weight, t("bookmarks.weight") %><br />
+    <%= f.select :weight, options_for_select((1..10).to_a, @bookmark.weight) %>
+  </div>
+  <div>
+    <%= f.label :catagory, t("bookmarks.catagory") %><br />
+    <%= f.select :catagory_id, options_from_collection_for_select(current_user.catagories , "id", "name", @bookmark.catagory.nil? ? nil : @bookmark.catagory.id) %>
+    <%= link_to t("catagory.new"), new_catagory_path %>
+  </div>
+  <div>
+    <%= f.submit t("top.save") %>
+  </div>
+<% end %>

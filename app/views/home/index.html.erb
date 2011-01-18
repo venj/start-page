@@ -1,0 +1,40 @@
+<% title( current_user.login.capitalize + t("top.owner_start_page")) %>
+<div class="header span-24">
+  <h1><%= current_user.login.capitalize + t("top.owner_start_page") %></h1>
+</div>
+<div class="nav span-24">
+  <div class="search span-12">
+    <form action="http://www.google.com/search" method="get" accept-charset="utf-8" class="inline">
+      <input name="q" value="" class="text"><input type="submit" value=<%= t("top.search") -%>></p>
+    </form>
+  </div>
+  <div class="span-12 last">
+    <ul>
+      <li><%= link_to t('top.gmail'), "http://mail.google.com" %></li>
+      <li><%= link_to t('top.greader'), "http://reader.google.com" %></li>
+      <li><%= link_to t("top.wikipedia"), "http://zh.wikipedia.org" %></li>
+      <li><%= link_to t("top.taobao"), "http://taobao.com" %></li>
+      <li id="scriptlet"><%= link_to t('top.add_page'), "javascript:var d=document,w=window,f='http://s.venj.me/bookmarks/new',l=d.location.href.split('?')[0].split('#')[0];a=function(){if(!w.open(f+'?'+'t='+d.title+'&'+'l='+l+'&p=1',null,'toolbar=0,status=0,resizable=0,width=600,height=400'))l.href=f};if(/Firefox/.test(navigator.userAgent))setTimeout(a, 0);else{a();}void(0);" %></li>
+      <li><%= link_to t("top.admin"), admin_path %></li>
+    </ul>
+  </div>
+</div>
+<% @catagories.each_slice(6) do |catagories| %>
+<div class="catagories span-24">
+  <% catagories.each_with_index do |catagory, index| %>
+  <div class="catagory span-4 <%= "last" if ((catagories.count-1)==index) -%>">
+      <h3><%= catagory.name -%></h3>
+      <ul>
+        <%= render :partial => 'bookmark', :collection => catagory.bookmarks %>
+      </ul>
+  </div>
+  <% end -%>
+</div>
+<% end -%>
+<div class="span-24 footer">
+  <div class="quiet small">
+    &copy;2011<%= "-#{Time.now.year}" if Time.now.year > 2011 %> <%= link_to "Venj", "http://blog.venj.me" %>,
+    Powered by <%= link_to "Rails", "http://rubyonrails.org" %>
+  </div>
+</div>
+</div>

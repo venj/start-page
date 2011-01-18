@@ -1,0 +1,11 @@
+<% form_for(@catagory) do |f| %>
+  <%= f.error_messages %>
+
+  <div>
+    <%= f.label :name, t("catagory.name") %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit t("top.save") %>
+  </div>
+<% end %>
