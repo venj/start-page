@@ -68,7 +68,7 @@ class CatagoriesController < ApplicationController
 
     respond_to do |format|
       if @catagory.update_attributes(params[:catagory])
-        format.html { redirect_to(@catagory, :notice => 'Catagory was successfully updated.') }
+        format.html { redirect_to(admin_path, :notice => 'Catagory was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
