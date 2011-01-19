@@ -30,6 +30,7 @@ a, a:link, a:visited {
 }
 a:hover, a:active {
     text-decoration:underline;
+    background:none; /* Overide scaffold.css link background */
 }
 h1 {
     font-size:1.8em;
