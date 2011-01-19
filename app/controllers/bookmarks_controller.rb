@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.xml
   def index
-    @bookmarks = current_user.bookmarks.all
+    @bookmarks = current_user.bookmarks(:all, :conditions => {:order => "weight DESC"})
 
     respond_to do |format|
       format.html # index.html.erb
@@ -64,7 +64,7 @@ class BookmarksController < ApplicationController
 
     respond_to do |format|
       if @bookmark.update_attributes(params[:bookmark])
-        format.html { redirect_to(root_path, :notice => 'Bookmark was successfully updated.') }
+        format.html { redirect_to(admin_path, :notice => 'Bookmark was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

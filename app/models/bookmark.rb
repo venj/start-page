@@ -6,4 +6,5 @@ class Bookmark < ActiveRecord::Base
   validates_presence_of :link, :on => :save, :message => "can't be blank"
   
   named_scope :uncatagorized, :conditions => {:catagory_id => nil}
+  named_scope :ordered, :order => "weight DESC, created_at ASC"
 end

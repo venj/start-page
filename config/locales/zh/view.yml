@@ -36,6 +36,7 @@ zh:
     link: 链接
     weight: 优先级
     catagory: 分类
+    uncatagorized: 未分类
   catagory:
     add: 添加新分类
     new: 新建分类

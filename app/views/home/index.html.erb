@@ -19,13 +19,13 @@
     </ul>
   </div>
 </div>
-<% @catagories.each_slice(6) do |catagories| %>
+<% @catagory_bookmarks.each_slice(6) do |catagory_bookmarks_slice| %>
 <div class="catagories span-24">
-  <% catagories.each_with_index do |catagory, index| %>
-  <div class="catagory span-4 <%= "last" if ((catagories.count-1)==index) -%>">
-      <h3><%= catagory.name -%></h3>
+  <% catagory_bookmarks_slice.each_with_index do |catagory_bookmarks, index| %>
+  <div class="catagory span-4 <%= "last" if ((catagory_bookmarks_slice.count-1)==index) -%>">
+      <h3><%= catagory_bookmarks[0].name -%></h3>
       <ul>
-        <%= render :partial => 'bookmark', :collection => catagory.bookmarks %>
+        <%= render :partial => 'bookmark', :collection => catagory_bookmarks[1] %>
       </ul>
   </div>
   <% end -%>

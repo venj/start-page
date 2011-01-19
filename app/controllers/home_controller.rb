@@ -2,8 +2,10 @@ class HomeController < ApplicationController
   before_filter :authenticate_user
   
   def index
-    @catagories = current_user.catagories
-    @uncatagorized_bookmarks = current_user.bookmarks.uncatagorized
+    @catagory_bookmarks = []
+    current_user.catagories.each do |cat|
+      @catagory_bookmarks << [cat, cat.bookmarks.ordered] unless cat.nil?
+    end
   end
 
 end

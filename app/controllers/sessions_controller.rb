@@ -9,7 +9,13 @@ class SessionsController < ApplicationController
 
   def create
     logout_keeping_session!
-    user = User.authenticate(params[:login], params[:password])
+    # A very nasty trick to allow email and  login.
+    login = params[:login]
+    if params[:login] =~ /.+?@.+?/
+      u = User.find_by_email(params[:login])
+      login = u.login unless u.nil?
+    end
+    user = User.authenticate(login, params[:password])
     if user
       # Protects against session fixation attacks, causes request forgery
       # protection if user resubmits an earlier form using back

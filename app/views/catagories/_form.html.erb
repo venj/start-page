@@ -4,6 +4,7 @@
   <div>
     <%= f.label :name, t("catagory.name") %><br />
     <%= f.text_field :name %>
+    <%= error_message_on "catagory", "name" %>
   </div>
   <div>
     <%= f.submit t("top.save") %>

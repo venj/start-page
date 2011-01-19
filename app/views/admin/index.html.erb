@@ -13,9 +13,10 @@
   <div><%= link_to t("bookmarks.new"), new_bookmark_path %></div>
   <table>
     <tr>
-      <th><%= t("top.title") -%></th>
-      <th><%= t("top.link") -%></th>
-      <th><%= t("top.catagory") -%></th>
+      <th><%= t("bookmarks.title") -%></th>
+      <th><%= t("bookmarks.link") -%></th>
+      <th><%= t("bookmarks.catagory") -%></th>
+      <th><%= t("bookmarks.weight") -%></th>
       <th><%= t("top.operation") -%></th>
     </tr>
 
@@ -23,7 +24,8 @@
     <tr>
       <td><%=h bookmark.title %></td>
       <td><%= link_to bookmark.link %></td>
-      <td><%=h bookmark.catagory.nil? ? '' : bookmark.catagory.name %></td>
+      <td><%=h bookmark.catagory.nil? ? t("bookmarks.uncatagorized") : bookmark.catagory.name %></td>
+      <td><%=h bookmark.weight%></td>
       <td><%= link_to t("top.edit"), edit_bookmark_path(bookmark) %> | 
         <%= link_to t("top.destroy"), bookmark, :confirm => t("top.sure"), :method => :delete %></td>
     </tr>
