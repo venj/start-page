@@ -37,13 +37,15 @@
   <div><%= link_to t("catagory.new"), new_catagory_path %></div>
   <table>
     <tr>
-      <th><%= t("top.cat_name") -%></th>
+      <th><%= t("catagory.name") -%></th>
+      <th><%= t("catagory.weight") -%></th>
       <th><%= t("top.operation") -%></th>
     </tr>
 
   <% @catagories.each do |catagory| %>
     <tr>
       <td><%=h catagory.name %></td>
+      <td><%=h catagory.weight %></td>
       <td><%= link_to t("top.edit"), edit_catagory_path(catagory) %> | 
         <%= link_to t("top.destroy"), catagory, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

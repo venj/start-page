@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   
   def index
     @catagory_bookmarks = []
-    current_user.catagories.each do |cat|
+    current_user.catagories.ordered.each do |cat|
       @catagory_bookmarks << [cat, cat.bookmarks.ordered] unless cat.nil?
     end
   end

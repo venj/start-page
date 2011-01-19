@@ -42,6 +42,7 @@ zh:
     new: 新建分类
     name: 分类名
     edit: 编辑分类
+    weight: 优先级
   admin:
     bookmarks: 链接管理
     catagories: 分类管理

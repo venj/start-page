@@ -6,6 +6,12 @@
     <%= f.text_field :name %>
     <%= error_message_on "catagory", "name" %>
   </div>
+  
+  <div>
+    <%= f.label :weight, t("catagory.weight") %><br />
+    <%= f.select :weight, options_for_select((1..10).to_a, @catagory.weight) %>
+  </div>
+  
   <div>
     <%= f.submit t("top.save") %>
   </div>

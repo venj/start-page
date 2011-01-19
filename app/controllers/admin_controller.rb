@@ -3,6 +3,6 @@ class AdminController < ApplicationController
   
   def index
     @bookmarks = current_user.bookmarks(:all, :conditions => {:order => "catagory_id ASC, weight DESC"})
-    @catagories = current_user.catagories(:all, :conditions => {:order => "id"})
+    @catagories = current_user.catagories(:all, :conditions => {:order => "created_at DESC"})
   end
 end
