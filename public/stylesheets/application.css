@@ -17,7 +17,7 @@
     border-top-right-radius: 8px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 8px;
 }
-.body {
+body {
     overflow:auto;
 }
 .small {
